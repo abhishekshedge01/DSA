@@ -32,7 +32,6 @@ void reverseUsingi(string &str, int i,int n)
 	reverseUsingi(str, ++i,n);
 }
 
-
 int main()
 {
 	string str;
