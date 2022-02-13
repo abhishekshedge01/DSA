@@ -20,6 +20,7 @@ void removeDuplicateArray(int* arr, int n)
 	}
 }
 
+
 int main()
 {
 	int arr[100];
