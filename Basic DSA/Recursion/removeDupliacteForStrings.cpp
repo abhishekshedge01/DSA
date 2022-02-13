@@ -30,6 +30,23 @@ string removeDuplicates(string str)
 }
 
 
+string removeDuplicate (string str)
+{
+    if (str.length() == 0)
+    {
+        return "";
+    }
+    if (str[0] ==str[1])
+    {
+        return removeDuplicate(str.substr(1));
+    }
+    else
+    {
+        return str[0] + removeDuplicate(str.substr(1));
+    }
+}
+
+
 void removeDuplicateString(char* str)
 {
 	if (str[0] == '\0')
@@ -59,6 +76,11 @@ int main()
 	string str;
 	cin >> str;
 	cout << removeDuplicates(str) << endl;  // O(n2)
+
+
+	string strx;
+	cin >> strx;
+	cout << removeDuplicate(strx) << endl;  // O(n2)
 
 
 	char str1[100];
