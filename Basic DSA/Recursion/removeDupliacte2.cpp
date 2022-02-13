@@ -1,27 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-string removeDuplicate(string str)
+// void print(int* arr,int n)
+// {
+// 	for (int i = 0; i < n; ++i)
+// 	{
+// 		cout << arr[i]<<" ";
+// 	}
+// 	cout << endl;
+// }
+
+
+string removeDuplicates(string str)
 {
-    if(str.length()==0)
-    {
-        return "";
-    }
-    char x=str[0];
-    string ans=removeDuplicate(str.substr(1));
-    if(ans[0]==x)
-    {
-        return ans;
-    }
-    else
-    {
-        return x+ans;
-    }
+	if (str.length() == 0)
+	{
+		return "";
+	}
+	char a = str[0];
+	string removed = removeDuplicates(str.substr(1));
+	if (removed[0] == a)
+	{
+		return removed;
+	}
+	else
+	{
+		return a + removed;
+	}
 }
 
 int main()
 {
-   string str;
-   cin>>str;
-   cout<<removeDuplicate(str);
+	string str;
+	cin >> str;
+	cout<< removeDuplicates(str)<<endl;  // O(n2)
 }
