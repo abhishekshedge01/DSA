@@ -29,9 +29,40 @@ string removeDuplicates(string str)
 	}
 }
 
+
+void removeDuplicateString(char* str)
+{
+	if (str[0] == '\0')
+	{
+		return;
+	}
+	if (str[1] == '\0')
+	{
+		return;
+	}
+
+	removeDuplicateString(str + 1);
+	if (str[0] == str[1])
+	{
+		int i = 1;
+		for (; str[i] != '\0'; ++i)
+		{
+			str[i - 1] = str[i];
+		}
+		str[i - 1] = str[i];
+	}
+}
+
+
 int main()
 {
 	string str;
 	cin >> str;
-	cout<< removeDuplicates(str)<<endl;  // O(n2)
-}
+	cout << removeDuplicates(str) << endl;  // O(n2)
+
+
+	char str1[100];
+	cin >> str1;
+	removeDuplicateString(str1);
+	cout << str1 << endl;
+ }
