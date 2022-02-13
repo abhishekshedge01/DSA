@@ -17,6 +17,21 @@ void isSorted(int* arr,int n)
 }
 
 
+
+bool checkIfSorted(vector <int> vec,int i)
+{
+	if (i>=vec.size()-1)
+	{
+		return true;
+	}
+	if (vec[i] > vec[i+1])
+	{
+		return false;
+	}
+	return checkIfSorted(vec, ++i);
+}
+
+
 int main()
 {
     int n;
