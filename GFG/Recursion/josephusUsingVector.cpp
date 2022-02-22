@@ -5,9 +5,9 @@ class Solution
     {
         if(vec.size()==1)
         {
-            return vec[0];
+            return vec.front();
         }
-        i=(i+k-1)%vec.size();
+        i=(i+k)%vec.size();
         vec.erase(vec.begin()+i);
         return solution(vec,k,i);
     }
@@ -20,6 +20,6 @@ class Solution
        {
            vec[i]=i+1;
        }
-       return solution(vec,k,0);
+       return solution(vec,k-1,0);
     }
 };
